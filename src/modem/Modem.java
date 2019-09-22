@@ -21,7 +21,7 @@ public final class Modem {
 
     private static final int CYCLES = 36;
 
-    private static final byte[] MASK = {
+    private final byte[] MASK = {
         (byte) 0b0000_0001, (byte) 0b0000_0010, (byte) 0b0000_0100, (byte) 0b0000_1000,
         (byte) 0b0001_0000, (byte) 0b0010_0000, (byte) 0b0100_0000, (byte) 0b1000_0000
     };
@@ -29,7 +29,7 @@ public final class Modem {
     /*
      * The waveforms are 36 samples each for 48 kHz sample rate
      */
-    private static final short[][] WAVE = {
+    private final short[][] WAVE = {
         // Normal
         // bit 0
         {0, 2778, 5472, 7999, 10284, 12256, 13856, 15035, 15756,
