@@ -47,7 +47,7 @@ public class Main {
         /*
          * record a random long audio so we can see what it sounds like
          */
-        for (int k = 0; k < 100; k++) {
+        for (int k = 0; k < 50; k++) {
             /*
              * Create data byte array
              */
@@ -68,25 +68,5 @@ public class Main {
                 System.exit(-1);
             }
         }
-
-        /*
-         * See if we can demodulate the frame (not likely with this small test)
-         */
-//        int offset = 0;
-//
-//        while (true) {
-//            int i = modem.demodulate(frame, offset, data);
-//            offset += i;
-//
-//            if ((data[11] & (byte) 0x80) == 1) {
-//                break;
-//            }
-//        }
-//
-//        for (i = 0; i < data.length; i++) {
-//            System.out.printf("%02X ", data[i]);
-//        }
-//
-//        System.out.println();
     }
 }

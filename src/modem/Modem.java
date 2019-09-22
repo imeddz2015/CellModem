@@ -21,13 +21,15 @@ public final class Modem {
 
     private static final int CYCLES = 36;
 
-    private static final byte[] MASK = new byte[]{(byte) 1, (byte) 2, (byte) 4, (byte) 8,
-        (byte) 16, (byte) 32, (byte) 64, (byte) 128};
+    private static final byte[] MASK = {
+        (byte) 0b0000_0001, (byte) 0b0000_0010, (byte) 0b0000_0100, (byte) 0b0000_1000,
+        (byte) 0b0001_0000, (byte) 0b0010_0000, (byte) 0b0100_0000, (byte) 0b1000_0000
+    };
 
     /*
      * The waveforms are 36 samples each for 48 kHz sample rate
      */
-    private static final short[][] WAVE = new short[][]{
+    private static final short[][] WAVE = {
         // Normal
         // bit 0
         {0, 2778, 5472, 7999, 10284, 12256, 13856, 15035, 15756,
@@ -224,7 +226,7 @@ public final class Modem {
         int[] eg = new int[CYCLES];             // correlation for each sample during period of carrier
         int i, j, k, b, p, pj;
         int ii, jj, kk, ll, bb, bbb;
-        
+
         int pp = 0;
         int lastbit = 0;
         int q = 0;
